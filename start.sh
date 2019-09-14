@@ -21,5 +21,19 @@ then
 	export FLASK_DEBUG=true
 fi
 
+if [ $(printenv | grep -c 'API_SECRET') -eq 0 ]
+then
+  echo "Don't forget of export your API_SECRET"
+  echo "Example : export API_SECRET=aaaaaaaaaa"
+  exit -1
+fi
+
+if [ $(printenv | grep -c 'API_KEY') -eq 0 ]
+then
+  echo "Don't forget of export your API_KEY"
+  echo "Example : export API_KEY=aaaaaaaaaa"
+  exit -1
+fi
+
 #Run Flask on adress with python2
 python -m flask run -h "$1"
