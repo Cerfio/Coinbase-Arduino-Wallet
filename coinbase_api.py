@@ -100,7 +100,7 @@ def home():
         jeton_display.append(listjeton[index_jeton + 1])
         jeton_display.append(listjeton[index_jeton + 2])
         return jsonify(
-            jeton = jeton_display,
+            jeton = listjeton,
 #           wallet = MyWallet.getWallet()
         )
     except IndexError:
